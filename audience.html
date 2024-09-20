@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; min-height: 14.0px}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; -webkit-text-stroke: #000000}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 14.0px Courier; color: #061539; color: rgba(6, 21, 57, 0.7); -webkit-text-stroke: rgba(6, 21, 57, 0.7)}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none; color: rgba(6, 21, 57, 0.7); -webkit-text-stroke: 0px rgba(6, 21, 57, 0.7)}
+    span.s2 {font-kerning: none}
+    span.s3 {font-kerning: none; color: #000000; -webkit-text-stroke: 0px #000000}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;title&gt;Select a Season&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-family: Arial, sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding-top: 50px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>padding: 20px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>margin: 10px;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>font-size: 18px;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;h1&gt;Select a Season&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setSeason('Spring')"&gt;Spring&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setSeason('Summer')"&gt;Summer&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setSeason('Autumn')"&gt;Autumn&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;button onclick="setSeason('Winter')"&gt;Winter&lt;/button&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Firebase SDK --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"&gt;&lt;/script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"&gt;&lt;/script&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>// Your web app's Firebase configuration</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const firebaseConfig = {</p>
+<p class="p1"><span class="Apple-converted-space">            </span>//<span class="Apple-converted-space"> </span></p>
+<p class="p3"><span class="s1">  apiKey: </span><span class="s2">"AIzaSyBRGkKjWY0ot8YrZHUzYs0i2uW9HSoKYQE"</span><span class="s1">,</span></p>
+<p class="p3"><span class="s1">  authDomain: </span><span class="s2">"seasonchangerapp.firebaseapp.com"</span><span class="s1">,</span></p>
+<p class="p3"><span class="s1">  databaseURL: </span><span class="s2">"https://seasonchangerapp-default-rtdb.europe-west1.firebasedatabase.app"</span><span class="s1">,</span></p>
+<p class="p3"><span class="s1">  projectId: </span><span class="s2">"seasonchangerapp"</span><span class="s1">,</span></p>
+<p class="p3"><span class="s1">  storageBucket: </span><span class="s2">"seasonchangerapp.appspot.com"</span><span class="s1">,</span></p>
+<p class="p4"><span class="s2">  messagingSenderId: </span><span class="s3">"129537664782"</span><span class="s2">,</span></p>
+<p class="p3"><span class="s1">  appId: </span><span class="s2">"1:129537664782:web:a46abb75a446a0aaa6d95f"</span><span class="s1">,</span></p>
+<p class="p4"><span class="s2">  measurementId: </span><span class="s3">"G-QE7H6P4NEM"</span></p>
+<p class="p5"><span class="Apple-converted-space">        </span>};</p>
+<p class="p6"><br></p>
+<p class="p5"><span class="Apple-converted-space">        </span>// Initialize Firebase</p>
+<p class="p5"><span class="Apple-converted-space">        </span>firebase.initializeApp(firebaseConfig);</p>
+<p class="p5"><span class="Apple-converted-space">        </span>const database = firebase.database();</p>
+<p class="p6"><br></p>
+<p class="p5"><span class="Apple-converted-space">        </span>function setSeason(season) {</p>
+<p class="p5"><span class="Apple-converted-space">            </span>database.ref('currentSeason').set(season);</p>
+<p class="p5"><span class="Apple-converted-space">            </span>alert('You selected ' + season + '!');</p>
+<p class="p5"><span class="Apple-converted-space">        </span>}</p>
+<p class="p5"><span class="Apple-converted-space">    </span>&lt;/script&gt;</p>
+<p class="p5">&lt;/body&gt;</p>
+<p class="p5">&lt;/html&gt;<span class="Apple-converted-space"> </span></p>
+</body>
+</html>
